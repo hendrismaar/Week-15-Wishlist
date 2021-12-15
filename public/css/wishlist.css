@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mountains+of+Christmas&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    opacity: 1;
+    background: repeating-linear-gradient( -45deg, #ff6c6c, #ff3333 10px, #a8ff92 10px, #a8ff92 40px );
+    text-align: center;
+}
+
+hr {
+    margin: 2rem auto;
+}
+
+.wish-submit-container {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.wish-submit-container h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3rem;
+}
+
+.submit-btn {
+    border: #7e0000 2px solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.wish-container {
+    font-family: 'Lato', sans-serif;
+    border:  #7e0000 2px solid;
+    width: 75%;
+}
+
+.wish-text {
+    display: block;
+}
+
+.wish-image {
+    width: 50vh;
+    height: 100%;
+    display: inline-block;
+}
+
+.delete-btn {
+    border: red 1px solid;
+    border-radius: 10px ;
+    margin-bottom: 3rem;
+}

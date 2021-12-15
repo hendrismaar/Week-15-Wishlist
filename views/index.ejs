@@ -4,29 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Wishlist</title>
+    <link rel="stylesheet" href="css/wishlist.css">
 </head>
 <body>
     
     <div class="container">
-        <h1>
-            <%= dateToRender %>
-        </h1>
-        <form action="/" method="POST">
-            <input type="text" name="userWish" placeholder="Add a wish">
-            <button type="submit">Add wish</button>
-        </form>
+        <div class="wish-submit-container">
+            <h1>
+                <%= dateToRender %>
+            </h1>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input class="wish-textbox" type="text" name="userWish" placeholder="Add a wish">
+                <input class="wish-file" type="file" name="userFile">
+                <button class="submit-btn" type="submit">Add wish</button>
+            </form>
+        </div>
 
+        <hr>
+        
         <div class="wish-container">
-            <ul>
+            <% for(let i = 0; i < myWishes.length; i++) { %>
+                <p class="wish-text"><%= myWishes[i].description %></p>
+                <img class="wish-image" src="<%= myWishes[i].imageUrl %>" alt="">
+                <form class="delete-btn" action="/deleteWish" method="POST">
+                    <input type="hidden" name="wishToDelete" value="<%= myWishes[i].description %>">
+                    <button  type="submit">X</button>
+                </form>
+                <p></p>
+            <% } %>
+
+            <!-- <ul>
             <% for(let i = 0; i < myWishes.length; i++) { %>
                 <li><%= myWishes[i].description %>
                     <form action="/deleteWish" method="POST" style="display: inline-block;">
                         <input type="hidden" name="wishToDelete" value="<%= myWishes[i].description %>">
                         <button type="submit">X</button>
                     </form>
+                    <img src="<%= myWishes[i].imageUrl %>" alt="">
+                    
                 </li>
             <% } %>
-            </ul>
+            </ul> -->
         </div>
 
     </div>

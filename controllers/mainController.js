@@ -24,7 +24,7 @@ exports.getWeekday = (req, res) => {
 
 exports.postWish = (req, res) => {
     console.log(req.body.userWish);
-    const newWish = new Wish(req.body.userWish);
+    const newWish = new Wish(req.body.userWish, req.file.filename);
     newWish.saveWish();
 
     res.redirect    ('/');
